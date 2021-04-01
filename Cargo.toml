@@ -1,0 +1,26 @@
+[package]
+name = "voxelspace"
+version = "0.1.0"
+authors = ["Matias <none>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[profile.release]
+lto = true
+codegen-units = 1
+panic = 'abort'
+
+
+[profile.dev]
+opt-level = 2
+
+[dependencies]
+ggez = { git = "https://github.com/ggez/ggez", rev = "09266f6" }
+glam = { version = "0.8", features = ["mint"] }
+rand = "0.8"
+derivative = "2.2"
+
+[build-dependencies]
+zip = "0.5"
+walkdir = "2"

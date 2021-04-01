@@ -1,0 +1,4 @@
+imports_granularity = "Item"
+newline_style = "Unix"
+group_imports = "StdExternalCrate"
+use_small_heuristics = "Max"
