@@ -16,14 +16,6 @@ use std::env;
 use ggez::event;
 use ggez::GameResult;
 
-// Now our main function, which does three things:
-//
-// * First, create a new `ggez::ContextBuilder`
-// object which contains configuration info on things such
-// as screen resolution and window title.
-// * Second, create a `ggez::game::Game` object which will
-// do the work of creating our MainState and running our game.
-// * Then, just call `game.run()` which runs the `Game` mainloop.
 pub fn main() -> GameResult {
     let zipped_resources = include_bytes!(concat!(env!("OUT_DIR"), "/resources.zip"));
     let cb = ggez::ContextBuilder::new("voxelspace", "qmatias")
