@@ -39,15 +39,10 @@ impl Map {
         let height_image_pixels = height_image.to_rgba8(ctx)?;
         let size = color_image.width() as i32;
 
-        let colors = color_image_pixels
-            .as_chunks::<4>()
-            .0
-            .iter()
-            .map(|&[r, g, b, _]| Color::from_rgb(r, g, b))
-            .collect();
+        let colors =
+            color_image_pixels.chunks_exact(4).map(|p| Color::from_rgb(p[0], p[1], p[2])).collect();
 
-        let height_map =
-            height_image_pixels.as_chunks::<4>().0.iter().map(|&[r, _, _, _]| r).collect();
+        let height_map = height_image_pixels.chunks_exact(4).map(|p| p[0]).collect();
 
         let shift = (size as f64).log2() as i32;
         assert_eq!(1 << shift, size);

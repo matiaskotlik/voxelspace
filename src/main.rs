@@ -1,5 +1,3 @@
-#![feature(trait_alias, slice_as_chunks)]
-
 use game::Game;
 use game::Scene;
 use ggez::{self};
