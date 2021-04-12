@@ -6,7 +6,6 @@ use ggez::{self};
 
 pub mod game;
 pub mod gamescreen;
-pub mod timer;
 
 #[macro_use]
 extern crate derivative;
