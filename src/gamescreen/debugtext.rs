@@ -40,11 +40,13 @@ Map: {map_id}",
 
         let right = "Controls:
 WASD: Move Camera
-→←: Render Distance
-↑↓: Height Scale
-Space/LShift: Up/Down
+←→: Change Render Distance
+↑↓: Change Height Scale
+Space/LShift: Move Up/Down
+[]: Change FOV 
 N/P: Next/Previous Map
-L: Toggle Debug Text";
+L: Toggle Debug Text
+Drag the screen to pan/rotate the camera";
 
         let (width, height) = ggez::graphics::drawable_size(ctx);
         let bounds = Vec2::new(width, height);

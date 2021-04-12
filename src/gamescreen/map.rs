@@ -7,6 +7,8 @@ use ggez::Context;
 use ggez::GameResult;
 use glam::*;
 
+const RENDER_DETAIL: f32 = 150.0;
+
 use super::MapDrawParam;
 #[derive(Derivative)]
 #[derivative(Debug)]
@@ -105,7 +107,7 @@ impl Map {
                 }
             }
 
-            z += (z / 150.0).max(1.0);
+            z += (z / RENDER_DETAIL).max(1.0);
         }
 
         graphics::draw(ctx, &self.batch, DrawParam::new())?;
