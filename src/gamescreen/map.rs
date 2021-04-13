@@ -97,7 +97,7 @@ impl Map {
                 y = (y * invz + param.horizon).clamp(0.0, height);
 
                 if y < *visible_y {
-                    self.draw_vertical_line(screen_x as f32, y, *visible_y, color)?;
+                    self.draw_vertical_line(screen_x as f32, y, *visible_y, color);
                     *visible_y = y
                 }
             }
@@ -111,11 +111,10 @@ impl Map {
         Ok(())
     }
 
-    fn draw_vertical_line(&mut self, x: f32, y1: f32, y2: f32, color: Color) -> GameResult {
+    fn draw_vertical_line(&mut self, x: f32, y1: f32, y2: f32, color: Color) {
         assert!(y1 <= y2);
         self.batch.add(
             DrawParam::new().dest(Vec2::new(x, y1)).color(color).scale(Vec2::new(1.0, y2 - y1)),
         );
-        Ok(())
     }
 }

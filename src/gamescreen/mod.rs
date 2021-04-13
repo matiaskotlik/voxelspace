@@ -108,7 +108,7 @@ impl MapState {
         _y: f32,
         dx: f32,
         dy: f32,
-    ) -> GameResult {
+    ) {
         if state.input.get_button_down(Button::Grab) {
             let (_width, height) = ggez::graphics::drawable_size(ctx);
             self.draw_param.rotation += (dx / height) * self.draw_param.fov;
@@ -118,18 +118,6 @@ impl MapState {
 
             self.draw_param.horizon += dy;
         }
-
-        Ok(())
-    }
-
-    fn handle_axis(
-        &mut self,
-        _ctx: &mut Context,
-        _world: &mut World,
-        _axis: Axis,
-        _value: bool,
-    ) -> GameResult {
-        Ok(())
     }
 
     fn handle_button(
@@ -211,8 +199,8 @@ impl Scene for MapState {
     ) -> GameResult {
         match event {
             InputEffect::Button(button) => self.handle_button(ctx, state, button, started)?,
-            InputEffect::Axis(axis, value) => self.handle_axis(ctx, state, axis, value)?,
-            InputEffect::Pointer(x, y, dx, dy) => self.pointer_moved(ctx, state, x, y, dx, dy)?,
+            InputEffect::Axis(_axis, _value) => (),
+            InputEffect::Pointer(x, y, dx, dy) => self.pointer_moved(ctx, state, x, y, dx, dy),
         }
         Ok(())
     }
