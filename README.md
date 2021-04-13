@@ -2,6 +2,8 @@
 
 Rust/[ggez](https://github.com/ggez/ggez) implementation of the Voxel Space algorithm from the Comanche games.
 
+Try it out: https://github.com/qmatias/voxelspace/releases/latest
+
 Maps are from https://github.com/s-macke/VoxelSpace/tree/master/maps
 
 # Screenshots:
