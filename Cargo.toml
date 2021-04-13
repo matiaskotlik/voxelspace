@@ -17,7 +17,6 @@ opt-level = 2
 [dependencies]
 ggez = { git = "https://github.com/ggez/ggez", rev = "09266f6" }
 glam = { version = "0.8", features = ["mint"] }
-rand = "0.8"
 derivative = "2.2"
 
 [build-dependencies]
